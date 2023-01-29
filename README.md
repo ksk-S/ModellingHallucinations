@@ -2,16 +2,20 @@
 
 This repository contains source code necessary to reproduce some of the main results in the paper:
 
-[Suzuki K](https://sites.google.com/view/keisukesuzuki/), [David S], [Seth A](https://www.anilseth.com/) ["Modelling Phenomenological Differences in Aetiologically Distinct Visual Hallucinations Using Deep Neural Networks."](https://osf.io/nr4ke/). PsyArXiv
+[Suzuki K](https://sites.google.com/view/keisukesuzuki/), David S, [Seth A](https://www.anilseth.com/) ["Modelling Phenomenological Differences in Aetiologically Distinct Visual Hallucinations Using Deep Neural Networks."](https://osf.io/nr4ke/). PsyArXiv
 
 For more information regarding the project, please visit https://osf.io/nr4ke/
 
 ## Setup
-Please follow the original [repsitory] (https://github.com/Evolving-AI-Lab/synthesizing) for setting up 
-### Installing software
 
+Our model is based on https://arxiv.org/abs/1605.09304
+
+Please also refer to the original repository (https://github.com/Evolving-AI-Lab/synthesizing) for setting up
+
+### Installing software
 This code is built on top of Caffe. You'll need to install the following:
-* Install Caffe; follow the official [installation instructions](http://caffe.berkeleyvision.org/installation.html).
+* Install Caffe; follow the official [installation instructions](http://caffe.berkeleyvision.org/installation.html). 
+* Caffew with upconv support (https://github.com/dosovits/caffe-fr-chairs).
 * Build the Python bindings for Caffe
 * If you have an NVIDIA GPU, you can optionally build Caffe with the GPU option to make it run faster
 * Make sure the path to your `caffe/python` folder in [settings.py](settings.py) is correct
@@ -27,6 +31,8 @@ You will need to download a few models. There are `download.sh` scripts provided
 Settings:
 * Paths to the downloaded models are in [settings.py](settings.py). They are relative and should work if the `download.sh` scripts run correctly.
 * The paths to the model being visualized can be overriden by providing arguments `net_weights` and `net_definition` to [act_max.py](act_max.py).
+
+
 
 ## Usage
 The main algorithm is in [act_max.py](act_max.py), which is a standalone Python script; you can pass various command-line arguments to run different experiments. Basically, to synthesize a preferred input for a target neuron *h* (e.g. the “candle” class output neuron), we optimize the hidden code input (red) of a [deep image generator network](https://arxiv.org/abs/1602.02644) to produce an image that highly activates *h*.
@@ -80,23 +86,17 @@ We provide here four different examples as a starting point. Feel free to be cre
     <img src="examples/example5.jpg" width=600px>
 </p>
 
-### Visualizing your own models
-* To visualize your own model you should search for the hyperparameter setting that produces the best images for your model.
-One simple way to do this is sweeping across different parameters (see code setup in the provided example bash scripts).
-* For even better result, one can train an image generator network to invert features from the model being visualized instead of using the provided generator (which is trained to invert CaffeNet). However, training such generator may not be easy for many reasons (e.g. inverting very deep nets like ResNet).
 
 ## Licenses
 Note that the code in this repository is licensed under MIT License, but, the pre-trained models used by the code have their own licenses. Please carefully check them before use.
 * The [image generator networks](https://arxiv.org/abs/1602.02644) (in [nets/upconv/](nets/upconv)) are for non-commercial use only. See their [page](http://lmb.informatik.uni-freiburg.de/resources/software.php) for more.
 * See the licenses of the models that you visualize (e.g. [DeepScene CNN](https://people.csail.mit.edu/khosla/papers/iclr2015_zhou.pdf)) before use.
 
-## Questions?
-Please feel free to drop [me](http://anhnguyen.me) a line or create github issues if you have questions/suggestions.
-
 ## References
 
-[1] Yosinski J, Clune J, Nguyen A, Fuchs T, Lipson H. "Understanding Neural Networks Through Deep Visualization". ICML 2015 Deep Learning workshop.
+[1] Suzuki K, Roseboom W, Schwartzman DJ, Seth A. "A deep-dream virtual reality platform for studying altered perceptual phenomenology"Scientific reports 7 (1), 1-11. 2017.
 
-[2] Zhou B, Khosla A, Lapedriza A, Oliva A, Torralba A. "Object detectors emerge in deep scene cnns". ICLR 2015.
+[2] Dosovitskiy A, Brox T. "Generating images with perceptual similarity metrics based on deep networks". arXiv preprint arXiv:1602.02644. 2016
 
-[3] Dosovitskiy A, Brox T. "Generating images with perceptual similarity metrics based on deep networks". arXiv preprint arXiv:1602.02644. 2016
+[3] Nguyen A, Dosovitskiy A, Yosinski J, Brox T, Clune J. "Synthesizing the preferred inputs for neurons in neural networks via deep generator networks. In Advances in neural information processing systems, pages 3387–3395. 2016.
+ 
