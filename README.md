@@ -46,14 +46,14 @@ We provide here four different examples as a starting point. Feel free to be cre
 * Running `./1_activate_output.sh` produces this result:
 
 <p align="center">
-    <img src="examples/1_veridical.jpg" width=600px>
+    <img src="examples/1_veridical.jpg" width=500px>
 </p>
 
 [2_activate_output_placesCNN.sh](2_activate_output_placesCNN.sh): Optimizing codes to activate *output* neurons of a different network, here [AlexNet DNN](http://places.csail.mit.edu/) trained on [MIT Places205](http://places.csail.mit.edu/) dataset. The same prior used here produces the best images for AlexNet architecture trained on different datasets. It also works on other architectures but the image quality might degrade (see Sec. 3.3 in [our paper](http://arxiv.org/abs/1605.09304)). 
 * Running `./2_activate_output_placesCNN.sh` produces this result:
 
 <p align="center">
-    <img src="examples/2_complex_neuro.jpg" width=600px>
+    <img src="examples/2_complex_neuro.jpg" width=500px>
 </p>
 
 [3_start_from_real_image.sh](3_start_from_real_image.sh): Instead of starting from a random code, this example starts from a code of a real image (here, an image of a red bell pepper) and optimizes it to increase the activation of the "bell pepper" neuron. 
@@ -62,7 +62,7 @@ We provide here four different examples as a starting point. Feel free to be cre
 * Running `./3_start_from_real_image.sh` produces this result:
 
 <p align="center">
-    <img src="examples/3_complex_CBS.jpg" width=700px>
+    <img src="examples/3_complex_CBS.jpg" width=500px>
 </p>
 <p align="center"><i>Optimization adds more green leaves and a surface below the initial pepper</i></p>
 
@@ -71,8 +71,8 @@ We provide here four different examples as a starting point. Feel free to be cre
 * Running `./4_activate_hidden.sh` produces this result:
 
 <p align="center">
-    <img src="examples/4_simple_CBS_conv3.jpg" width=500px>
-    <img src="examples/4_simple_CBS_conv4.jpg" width=500px>
+    <img src="examples/4_simple_CBS_conv3.jpg" width=300px>
+    <img src="examples/4_simple_CBS_conv4.jpg" width=300px>
 </p>
 <p align="center"><i>From left to right are units that are semantically labeled by humans in [2] as: <br/>lighthouse, building, bookcase, food, and painting </i></p>
 
@@ -82,7 +82,7 @@ We provide here four different examples as a starting point. Feel free to be cre
 * Running `./5_activate_output_GoogLeNet.sh` produces this result:
 
 <p align="center">
-    <img src="examples/5_complex_psychedelic.jpg" width=600px>
+    <img src="examples/5_complex_psychedelic.jpg" width=500px>
 </p>
 
 
