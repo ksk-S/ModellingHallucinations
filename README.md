@@ -42,21 +42,24 @@ In our model, three different parameters can be modified to simulate different t
 ### Examples
 We provide here four different examples as a starting point. Feel free to be creative and fork away to produce even cooler results!
 
-[1_activate_output.sh](1_activate_output.sh): Optimizing codes to activate *output* neurons of the [CaffeNet DNN](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) trained on ImageNet dataset. This script synthesizes images for 5 example neurons. 
+All the script calls [image_generation.sh](image_generation.sh) which defines all the parameters and call [act_max2.py](act_max2.py).
+
+
+[1_veridical_perception.sh](1_veridical_perception.sh): Optimizing codes to activate *output* neurons of the [CaffeNet DNN](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) trained on ImageNet dataset. This script synthesizes images for 5 example neurons. 
 * Running `./1_activate_output.sh` produces this result:
 
 <p align="center">
     <img src="examples/1_veridical.jpg" width=500px>
 </p>
 
-[2_activate_output_placesCNN.sh](2_activate_output_placesCNN.sh): Optimizing codes to activate *output* neurons of a different network, here [AlexNet DNN](http://places.csail.mit.edu/) trained on [MIT Places205](http://places.csail.mit.edu/) dataset. The same prior used here produces the best images for AlexNet architecture trained on different datasets. It also works on other architectures but the image quality might degrade (see Sec. 3.3 in [our paper](http://arxiv.org/abs/1605.09304)). 
+[2_complex_neurological.sh](2_complex_neurological.sh): Optimizing codes to activate *output* neurons of a different network, here [AlexNet DNN](http://places.csail.mit.edu/) trained on [MIT Places205](http://places.csail.mit.edu/) dataset. The same prior used here produces the best images for AlexNet architecture trained on different datasets. It also works on other architectures but the image quality might degrade (see Sec. 3.3 in [our paper](http://arxiv.org/abs/1605.09304)). 
 * Running `./2_activate_output_placesCNN.sh` produces this result:
 
 <p align="center">
     <img src="examples/2_complex_neuro.jpg" width=500px>
 </p>
 
-[3_start_from_real_image.sh](3_start_from_real_image.sh): Instead of starting from a random code, this example starts from a code of a real image (here, an image of a red bell pepper) and optimizes it to increase the activation of the "bell pepper" neuron. 
+[3_complex_CBS.sh](3_complex_CBS.sh): Instead of starting from a random code, this example starts from a code of a real image (here, an image of a red bell pepper) and optimizes it to increase the activation of the "bell pepper" neuron. 
 * Depending on the hyperparameter settings, one could produce images near or far the initialization code (e.g. ending up with a *green* pepper when starting with a red pepper).
 * The `debug` option in the script is enabled allowing one to visualize the activations of intermediate images.
 * Running `./3_start_from_real_image.sh` produces this result:
@@ -67,7 +70,7 @@ We provide here four different examples as a starting point. Feel free to be cre
 <p align="center"><i>Optimization adds more green leaves and a surface below the initial pepper</i></p>
 
 
-[4_activate_hidden.sh](4_activate_hidden.sh): Optimizing codes to activate *hidden* neurons at layer 5 of the [DeepScene DNN](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) trained on MIT Places dataset. This script synthesizes images for 5 example neurons. 
+[4_simple_CBS.sh](4_simple_CBS.sh): Optimizing codes to activate *hidden* neurons at layer 5 of the [DeepScene DNN](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) trained on MIT Places dataset. This script synthesizes images for 5 example neurons. 
 * Running `./4_activate_hidden.sh` produces this result:
 
 <p align="center">
@@ -78,12 +81,27 @@ We provide here four different examples as a starting point. Feel free to be cre
 
 * This result matches the conclusion that object detectors automatically emerge in a DNN trained to classify images of places [2]. See Fig. 6 in [our paper](http://arxiv.org/abs/1605.09304) for more comparison between these images and visualizations produced by [2].
 
-[5_activate_output_GoogLeNet.sh](5_activate_output_GoogLeNet.sh): Here is an example of activating the output neurons of a different architecture, GoogLeNet, trained on ImageNet. Note that the *learning rate* used in this example is different from that in the example 1 and 2 above.
+[5_complex_psychedelic.sh](5_complex_psychedelic.sh): Here is an example of activating the output neurons of a different architecture, GoogLeNet, trained on ImageNet. Note that the *learning rate* used in this example is different from that in the example 1 and 2 above.
 * Running `./5_activate_output_GoogLeNet.sh` produces this result:
 
 <p align="center">
     <img src="examples/5_complex_psychedelic.jpg" width=500px>
 </p>
+
+
+[6_simple_psychedelic.sh](6_simple_psychedelic.sh): Here we simualte the simple psychedelic VHs with the following parameters.
+
+
+<p align="center">
+    <img src="examples/5_complex_psychedelic.jpg" width=500px>
+</p>
+
+
+[run_experiment.sh](run_validation.sh): Run all the above and generate image in Result folder.
+
+
+[run_validation.sh](run_validation.sh): Run all the conditions with 32 different initial images, which were used for psychedelic survey (see the paper[1] for details).
+
 
 
 ## Licenses
