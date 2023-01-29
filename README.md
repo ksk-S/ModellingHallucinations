@@ -2,16 +2,14 @@
 
 This repository contains source code necessary to reproduce some of the main results in the paper:
 
-[Suzuki K](), [David S](http://lmb.informatik.uni-freiburg.de/people/dosovits/), [Seth A](http://yosinski.com/) ["Modelling Phenomenological Differences in Aetiologically Distinct Visual Hallucinations Using Deep Neural Networks."](https://osf.io/nr4ke/). 
+[Suzuki K](https://sites.google.com/view/keisukesuzuki/), [David S], [Seth A](https://www.anilseth.com/) ["Modelling Phenomenological Differences in Aetiologically Distinct Visual Hallucinations Using Deep Neural Networks."](https://osf.io/nr4ke/). PsyArXiv
 
-**If you use this software in an academic article, please cite:**
-
- 
 For more information regarding the project, please visit https://osf.io/nr4ke/
 
 ## Setup
-
+Please follow the original [repsitory] (https://github.com/Evolving-AI-Lab/synthesizing) for setting up 
 ### Installing software
+
 This code is built on top of Caffe. You'll need to install the following:
 * Install Caffe; follow the official [installation instructions](http://caffe.berkeleyvision.org/installation.html).
 * Build the Python bindings for Caffe
@@ -24,8 +22,7 @@ You will need to download a few models. There are `download.sh` scripts provided
 * The image generation network (Upconvolutional network) from [3]. You can download directly on their [website](https://github.com/anguyen8/upconv_release) or using the provided script `cd nets/upconv && ./download.sh`
 * A network being visualized (e.g. from Caffe software package or Caffe Model Zoo). The provided examples use these models:
   * [BVLC reference CaffeNet](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet): `cd nets/caffenet && ./download.sh`
-  * [BVLC GoogLeNet](https://github.com/BVLC/caffe/tree/master/models/bvlc_googlenet): `cd nets/googlenet && ./download.sh`
-  * [AlexNet CNN trained on MIT Places dataset](http://places.csail.mit.edu/): `cd nets/placesCNN && ./download.sh`
+
 
 Settings:
 * Paths to the downloaded models are in [settings.py](settings.py). They are relative and should work if the `download.sh` scripts run correctly.
