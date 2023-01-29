@@ -36,7 +36,7 @@ The main algorithm is in [act_max2.py](act_max2.py), which is a standalone Pytho
 In our model, three different parameters can be modified to simulate different types of visual hallucinations.  
 
 <p align="center">
-    <img src="examples/model.jpg">
+    <img src="examples/model.jpg" width=600px>
 </p>
 
 ### Examples
