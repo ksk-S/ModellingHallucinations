@@ -2,18 +2,16 @@
 
 This repository contains source code necessary to reproduce some of the main results in the paper:
 
-[Suzuki K](https://sites.google.com/view/keisukesuzuki/), David S, [Seth A](https://www.anilseth.com/) ["Modelling Phenomenological Differences in Aetiologically Distinct Visual Hallucinations Using Deep Neural Networks."](https://osf.io/nr4ke/). PsyArXiv [1]
+[Suzuki K](https://sites.google.com/view/keisukesuzuki/), David S, [Seth A](https://www.anilseth.com/) ["Modelling Phenomenological Differences in Aetiologically Distinct Visual Hallucinations Using Deep Neural Networks."](https://osf.io/nr4ke/). PsyArXiv [1].
 
-For more information regarding the project, please visit [the project website](https://osf.io/nr4ke/)
+For more information regarding the project, please visit [the project website](https://osf.io/nr4ke/).
 
 ## Setup
-Our model is largely based on [Nguyen et al 2016](https://arxiv.org/abs/1605.09304)[2].
-
-Please also follow to [the instlation instruction](https://github.com/Evolving-AI-Lab/synthesizing) of the original repository for setting up.
+Our model is largely based on [Nguyen et al 2016](https://arxiv.org/abs/1605.09304)[2]. Please also follow to [the instlation instruction](https://github.com/Evolving-AI-Lab/synthesizing) of the original repository for setting up.
 
 ### Installing software
 This code is built on top of Caffe. You'll need to install the following:
-* Install Caffe; follow the official [installation instructions](http://caffe.berkeleyvision.org/installation.html). You will need to install [Caffe supporting upconvolution](https://github.com/dosovits/caffe-fr-chairs).
+* Install Caffe; follow the official [installation instructions](http://caffe.berkeleyvision.org/installation.html). You will need to install [Caffe supporting upconvolution](https://github.com/dosovits/caffe-fr-chairs)
 * Build the Python bindings for Caffe
 * If you have an NVIDIA GPU, you can optionally build Caffe with the GPU option to make it run faster
 * Make sure the path to your `caffe/python` folder in [settings.py](settings.py) is correct
@@ -33,10 +31,12 @@ Settings:
 
 
 ## Usage
-The main algorithm is in [act_max.py](act_max.py), which is a standalone Python script; you can pass various command-line arguments to run different experiments. Basically, to synthesize a preferred input for a target neuron *h* (e.g. the “candle” class output neuron), we optimize the hidden code input (red) of a [deep image generator network](https://arxiv.org/abs/1602.02644) to produce an image that highly activates *h*.
+The main algorithm is in [act_max2.py](act_max2.py), which is a standalone Python script; you can pass various command-line arguments to run different experiments. 
+
+In our model, three different parameters can be modified to simulate different types of visual hallucinations.  
 
 <p align="center">
-    <img src="http://anhnguyen.me/wp-content/uploads/2017/03/160531__arxiv_main_concept-1024x445.jpg" width=600px>
+    <img src="examples/model.png">
 </p>
 
 ### Examples
