@@ -71,8 +71,8 @@ We provide here four different examples as a starting point. Feel free to be cre
 * Running `./4_activate_hidden.sh` produces this result:
 
 <p align="center">
-    <img src="examples/4_simple_CBS_conv3.jpg" width=250px>
-    <img src="examples/4_simple_CBS_conv4.jpg" width=250px>
+    <img src="examples/4_simple_CBS_conv3.jpg" width=280px>
+    <img src="examples/4_simple_CBS_conv4.jpg" width=280px>
 </p>
 <p align="center"><i>From left to right are units that are semantically labeled by humans in [2] as: <br/>lighthouse, building, bookcase, food, and painting </i></p>
 
