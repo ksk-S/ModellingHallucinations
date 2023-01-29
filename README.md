@@ -2,15 +2,13 @@
 
 This repository contains source code necessary to reproduce some of the main results in the paper:
 
-[Suzuki K](https://sites.google.com/view/keisukesuzuki/), David S, [Seth A](https://www.anilseth.com/) ["Modelling Phenomenological Differences in Aetiologically Distinct Visual Hallucinations Using Deep Neural Networks."](https://osf.io/nr4ke/). PsyArXiv
+[Suzuki K](https://sites.google.com/view/keisukesuzuki/), David S, [Seth A](https://www.anilseth.com/) ["Modelling Phenomenological Differences in Aetiologically Distinct Visual Hallucinations Using Deep Neural Networks."](https://osf.io/nr4ke/). PsyArXiv [1]
 
-For more information regarding the project, please visit https://osf.io/nr4ke/
+For more information regarding the project, please visit [the project website](https://osf.io/nr4ke/)
 
 ## Setup
-
-Our model is based on https://arxiv.org/abs/1605.09304
-
-Please also refer to the original repository (https://github.com/Evolving-AI-Lab/synthesizing) for setting up
+Our model is largely based on [Nguyen et al 2016](https://arxiv.org/abs/1605.09304)[2]
+Please also follow to [the instlation instruction](https://github.com/Evolving-AI-Lab/synthesizing) of the original repository for setting up
 
 ### Installing software
 This code is built on top of Caffe. You'll need to install the following:
@@ -96,7 +94,7 @@ Note that the code in this repository is licensed under MIT License, but, the pr
 
 [1] Suzuki K, Roseboom W, Schwartzman DJ, Seth A. "A deep-dream virtual reality platform for studying altered perceptual phenomenology"Scientific reports 7 (1), 1-11. 2017.
 
-[2] Dosovitskiy A, Brox T. "Generating images with perceptual similarity metrics based on deep networks". arXiv preprint arXiv:1602.02644. 2016
+[2] Nguyen A, Dosovitskiy A, Yosinski J, Brox T, Clune J. "Synthesizing the preferred inputs for neurons in neural networks via deep generator networks. In Advances in neural information processing systems, pages 3387–3395. 2016.
 
-[3] Nguyen A, Dosovitskiy A, Yosinski J, Brox T, Clune J. "Synthesizing the preferred inputs for neurons in neural networks via deep generator networks. In Advances in neural information processing systems, pages 3387–3395. 2016.
+[3] Dosovitskiy A, Brox T. "Generating images with perceptual similarity metrics based on deep networks". arXiv preprint arXiv:1602.02644. 2016
  
