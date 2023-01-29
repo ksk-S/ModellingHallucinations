@@ -7,13 +7,13 @@ This repository contains source code necessary to reproduce some of the main res
 For more information regarding the project, please visit [the project website](https://osf.io/nr4ke/)
 
 ## Setup
-Our model is largely based on [Nguyen et al 2016](https://arxiv.org/abs/1605.09304)[2]
-Please also follow to [the instlation instruction](https://github.com/Evolving-AI-Lab/synthesizing) of the original repository for setting up
+Our model is largely based on [Nguyen et al 2016](https://arxiv.org/abs/1605.09304)[2].
+
+Please also follow to [the instlation instruction](https://github.com/Evolving-AI-Lab/synthesizing) of the original repository for setting up.
 
 ### Installing software
 This code is built on top of Caffe. You'll need to install the following:
-* Install Caffe; follow the official [installation instructions](http://caffe.berkeleyvision.org/installation.html). 
-* Caffew with upconv support (https://github.com/dosovits/caffe-fr-chairs).
+* Install Caffe; follow the official [installation instructions](http://caffe.berkeleyvision.org/installation.html). You will need to install [Caffe supporting upconvolution](https://github.com/dosovits/caffe-fr-chairs).
 * Build the Python bindings for Caffe
 * If you have an NVIDIA GPU, you can optionally build Caffe with the GPU option to make it run faster
 * Make sure the path to your `caffe/python` folder in [settings.py](settings.py) is correct
