@@ -4,10 +4,10 @@ This repository contains source code necessary to reproduce some of the main res
 
 [Suzuki K](https://sites.google.com/view/keisukesuzuki/), David S, [Seth A](https://www.anilseth.com/) ["Modelling Phenomenological Differences in Aetiologically Distinct Visual Hallucinations Using Deep Neural Networks."](https://osf.io/nr4ke/). PsyArXiv [1].
 
-For more information regarding the project, please visit [the project website](https://osf.io/nr4ke/).
+For more information regarding the project, please visit [the project website on OSF](https://osf.io/nr4ke/).
 
 ## Setup
-Our model is largely based on [Nguyen et al 2016](https://arxiv.org/abs/1605.09304)[2]. Please also follow to [the instlation instruction](https://github.com/Evolving-AI-Lab/synthesizing) of the original repository for setting up.
+Our model is largely based on [Nguyen et al 2016](https://arxiv.org/abs/1605.09304)[2]. Please also follow [the instlation instruction](https://github.com/Evolving-AI-Lab/synthesizing) of the original repository for setting up the model.
 
 ### Installing software
 This code is built on top of Caffe. You'll need to install the following:
@@ -19,15 +19,12 @@ This code is built on top of Caffe. You'll need to install the following:
 
 ### Downloading models
 You will need to download a few models. There are `download.sh` scripts provided for your convenience.
-* The image generation network (Upconvolutional network) from [3]. You can download directly on their [website](https://github.com/anguyen8/upconv_release) or using the provided script `cd nets/upconv && ./download.sh`
-* A network being visualized (e.g. from Caffe software package or Caffe Model Zoo). The provided examples use these models:
-  * [BVLC reference CaffeNet](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet): `cd nets/caffenet && ./download.sh`
+* The deep generator network (Upconvolutional network) from Dosovitskiy & Brox (2016)[3]. You can download directly on their [website](https://github.com/anguyen8/upconv_release) or using the provided script `cd nets/upconv && ./download.sh`
+* The deep convolutional neural network can be downloaded from [BVLC reference CaffeNet](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) or using the provided script `cd nets/caffenet && ./download.sh`
 
 
 Settings:
 * Paths to the downloaded models are in [settings.py](settings.py). They are relative and should work if the `download.sh` scripts run correctly.
-* The paths to the model being visualized can be overriden by providing arguments `net_weights` and `net_definition` to [act_max.py](act_max.py).
-
 
 
 ## Usage
