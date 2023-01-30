@@ -132,8 +132,8 @@ Optimizing codes to activate *output* neurons of the [CaffeNet DNN](https://gith
 
 
 <p align="center">    
-    <img src="examples/6_simple_psychedelic_conv3" width=350px>
-    <img src="examples/6_simple_psychedelic_conv4" width=350px>
+    <img src="examples/6_simple_psychedelic_conv3.jpg" width=350px>
+    <img src="examples/6_simple_psychedelic_conv4.jpg" width=350px>
 </p>
 
 
