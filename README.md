@@ -176,7 +176,7 @@ An example for verdical perception with the time course.
 
 An example for complex psychedelic visual hallucinations with the time course.
 <p align="center">
-    <img src="examples/Results/all_5_complex_psychedelic" width=700px>
+    <img src="examples/Results/all_5_complex_psychedelic.jpg" width=700px>
 </p>
 
 
