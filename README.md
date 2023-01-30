@@ -110,42 +110,58 @@ Simulating phenomenology of complex neurological visual hallucinations using `ac
 #### [3_complex_CBS.sh](3_complex_CBS.sh)
 
 
-Simulating visual hallucinations as the result of visuall loss in Charls Bonnet Syndrome (CBS) using `act_layer=fc8` `gen_type=DGN` `act_mode=fixed` `init_img=blurred`. The input images with blurs in their centres are used to simulte visual deficits associated with CBS. see Sec.3.3 in [our paper](PsyArXiv).
+Simulating complex visual hallucinations as the result of visuall loss in Charls Bonnet Syndrome (CBS) using `act_layer=fc8` `gen_type=DGN` `act_mode=fixed` `init_img=blurred`. The input images with blurs in their centres are used to simulte visual deficits associated with CBS. see Sec.3.3 in [our paper](PsyArXiv).
 
 * Running `./3_complex_CBS.sh` produces this result:
 
 <p align="center">
     <img src="examples/output/3_complex_CBS.jpg" width=700px>
 </p>
+
+
 <p align="center"><i>Optimization adds more green leaves and a surface below the initial pepper</i></p>
 
 
 
+#### [4_simple_CBS.sh](4_simple_CBS.sh)
 
-[4_simple_CBS.sh](4_simple_CBS.sh): Optimizing codes to activate *hidden* neurons at layer 5 of the [DeepScene DNN](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) trained on MIT Places dataset. This script synthesizes images for 5 example neurons. 
-* Running `./4_activate_hidden.sh` produces this result:
+Simulating simple visual hallucinations as the result of visuall loss in Charls Bonnet Syndrome (CBS) using `act_layer=conv3` or `act_layer=conv4` `gen_type=DGN` `act_mode=fixed` `init_img=blurred`. The input images with blurs in their centres are used to simulte visual deficits associated with CBS. see Sec.3.3 in [our paper](PsyArXiv).
 
+* Running `./4_simple_CBS.sh conv3` produces this result:
 <p align="center">
     <img src="examples/output/4_simple_CBS_conv3.jpg" width=700px>
+</p>
+
+* Running `./4_simple_CBS.sh conv4` produces this result:
+<p align="center">
     <img src="examples/output/4_simple_CBS_conv4.jpg" width=700px>
 </p>
+
 <p align="center"><i>From left to right are units that are semantically labeled by humans in [2] as: <br/>lighthouse, building, bookcase, food, and painting </i></p>
 
-* This result matches the conclusion that object detectors automatically emerge in a DNN trained to classify images of places [2]. See Fig. 6 in [our paper](http://arxiv.org/abs/1605.09304) for more comparison between these images and visualizations produced by [2].
 
-[5_complex_psychedelic.sh](5_complex_psychedelic.sh): Here is an example of activating the output neurons of a different architecture, GoogLeNet, trained on ImageNet. Note that the *learning rate* used in this example is different from that in the example 1 and 2 above.
-* Running `./5_activate_output_GoogLeNet.sh` produces this result:
+#### [5_complex_psychedelic.sh](5_complex_psychedelic.sh)
+
+Here is an example of activating the output neurons of a different architecture, 
+
+* Running `./5_complex_psychedelic.sh` produces this result:
 
 <p align="center">
     <img src="examples/output/5_complex_psychedelic.jpg" width=500px>
 </p>
 
 
-[6_simple_psychedelic.sh](6_simple_psychedelic.sh): Here we simualte the simple psychedelic VHs with the following parameters.
+#### [6_simple_psychedelic.sh](6_simple_psychedelic.sh)
 
+Here we simualte the simple psychedelic VHs with the following parameters.
 
-<p align="center">    
+* Running `./6_simple_psychedelic.sh conv3` produces this result:
+<p align="center">
     <img src="examples/output/6_simple_psychedelic_conv3.jpg" width=350px>
+</p>
+
+* Running `./6_simple_psychedelic.sh conv4` produces this result:
+<p align="center">
     <img src="examples/output/6_simple_psychedelic_conv4.jpg" width=350px>
 </p>
 
@@ -156,7 +172,7 @@ Simulating visual hallucinations as the result of visuall loss in Charls Bonnet 
 
 An example for verdical perception with the time course.
 <p align="center">
-    <img src="examples/Results/1_veridical.jpg" width=500px>
+    <img src="examples/Results/1_veridical.jpg" width=700px>
 </p>
 
 
