@@ -85,6 +85,13 @@ We provide here six different simulations provided in the paper.
 
 Simulating benchmark (non-hallucinatory) perceptual phenomenology using `act_layer=fc8` `gen_type=DGN` `act_mode=winner`. Using 'Winner-take-all' error function, the images with the categories in the input images are synthesised. See Sec.3.1 in [our paper](PsyArXiv) for more details. 
 
+* The input images used in this simulation and others.
+
+<p align="center">
+    <img src="examples/init_original.jpg" width=700px>
+</p>
+
+
 * Running `./1_veridical_perception.sh` produces this result:
 
 <p align="center">
@@ -111,6 +118,13 @@ Simulating phenomenology of complex neurological visual hallucinations using `ac
 
 
 Simulating complex visual hallucinations as the result of visuall loss in Charls Bonnet Syndrome (CBS) using `act_layer=fc8` `gen_type=DGN` `act_mode=fixed` `init_img=blurred`. The input images with blurs in their centres are used to simulte visual deficits associated with CBS. see Sec.3.3 in [our paper](PsyArXiv).
+
+* The input images used for the CBS simulations.
+
+<p align="center">
+    <img src="examples/init_blur.jpg" width=700px>
+</p> 
+
 
 * Running `./3_complex_CBS.sh` produces this result:
 
