@@ -45,7 +45,9 @@ Model architecture and 3 manipulations applied to our model to simulate specific
 ### Simulations
 We provide here six different simulations provided in the paper. 
 
-All the script calls [image_generation.sh](image_generation.sh) which handles the parameters before calling [act_max2.py](act_max2.py). Key parameters in [image_generation.sh](image_generation.sh) are as follows.
+All the script calls [image_generation.sh](image_generation.sh) which handles the parameters before calling [act_max2.py](act_max2.py). 
+
+Key parameters in [image_generation.sh](image_generation.sh) are as follows.
 
 
 * Target Layer `act_layer="${1:-fc8}"` [fc8 (default)| conv3 | conv4 | conv5]: Specify the target layer in DCNN to terminate the activation maximisation.
