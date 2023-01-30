@@ -1,3 +1,4 @@
 #/bin/bash
+layer="${1:-conv4}"
 
-bash image_generation.sh conv4 DGN winner blurred shifted
+bash image_generation.sh ${layer} DGN winner blurred shifted

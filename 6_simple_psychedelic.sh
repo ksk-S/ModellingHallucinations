@@ -1,3 +1,4 @@
 #/bin/bash
+layer="${1:-conv4}"
 
-bash image_generation.sh conv4 DCNN winner original shifted 1
+bash image_generation.sh ${layer} DCNN winner original shifted 1
