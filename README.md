@@ -90,7 +90,7 @@ This script synthesizes images for 5 examples in `output` directory
 * Running `./1_veridical_perception.sh` produces this result:
 
 <p align="center">
-    <img src="examples/1_veridical.jpg" width=500px>
+    <img src="examples/output/1_veridical.jpg" width=500px>
 </p>
 
 [2_complex_neurological.sh](2_complex_neurological.sh): Optimizing codes to activate *output* neurons of a different network, here [AlexNet DNN](http://places.csail.mit.edu/) trained on [MIT Places205](http://places.csail.mit.edu/) dataset. The same prior used here produces the best images for AlexNet architecture trained on different datasets. It also works on other architectures but the image quality might degrade (see Sec. 3.3 in [our paper](http://arxiv.org/abs/1605.09304)). 
@@ -145,7 +145,7 @@ This script synthesizes images for 5 examples in `output` directory
 
 An example for verdical perception with the time course.
 <p align="center">
-    <img src="examples/1_veridical.jpg" width=500px>
+    <img src="examples/Results/1_veridical.jpg" width=500px>
 </p>
 
 
