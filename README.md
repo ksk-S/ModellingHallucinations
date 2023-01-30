@@ -81,15 +81,16 @@ Exporting the images at iteration 10, 50, 100, and 1000 in `exp` mode, 50, 100, 
 ### Simulations
 We provide here six different simulations provided in the paper. 
 
-#### [1_veridical_perception.sh](1_veridical_perception.sh)
-
-Simulating benchmark (non-hallucinatory) perceptual phenomenology using `act_layer=fc8` `gen_type=DGN` `act_mode=winner`. Using 'Winner-take-all' error function, the images with the categories in the input images are synthesised. See Sec.3.1 in [our paper](PsyArXiv) for more details. 
-
-* The input images used in this simulation and others.
+* The input images used in the following simulations (except for complex and simple CBS).
 
 <p align="center">
     <img src="examples/init_original.jpg" width=700px>
 </p>
+
+
+#### [1_veridical_perception.sh](1_veridical_perception.sh)
+
+Simulating benchmark (non-hallucinatory) perceptual phenomenology using `act_layer=fc8` `gen_type=DGN` `act_mode=winner`. Using 'Winner-take-all' error function, the images with the categories in the input images are synthesised. See Sec.3.1 in [our paper](PsyArXiv) for more details. 
 
 
 * Running `./1_veridical_perception.sh` produces this result:
