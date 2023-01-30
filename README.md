@@ -171,9 +171,13 @@ Simulating simple psychedelic visual hallucinations using `act_layer=conv3` or `
 
 An example for verdical perception with the time course.
 <p align="center">
-    <img src="examples/Results/1_veridical.jpg" width=700px>
+    <img src="examples/Results/all_1_veridical.jpg" width=700px>
 </p>
 
+An example for complex psychedelic visual hallucinations with the time course.
+<p align="center">
+    <img src="examples/Results/all_5_psychedelic.jpg" width=700px>
+</p>
 
 
 ### Validations
