@@ -48,21 +48,20 @@ We provide here six different simulations provided in the paper.
 All the script calls [image_generation.sh](image_generation.sh) which handles the parameters before calling [act_max2.py](act_max2.py).
 
 
+* Target Layer [fc8 (default)| conv3 | conv4 | conv5]
+`act_layer="${1:-fc8}"`
 
-## Target Layer [fc8 | conv3 | conv4 | conv5]
-act_layer="${1:-fc8}"
+* Generation Type [DGN (default) | DCNN]
+`gen_type="${2:-DGN}"`
 
-## Generation Type [DGN | DCNN]
-gen_type="${2:-DGN}"
+* Select Error Function [winner, l2norm, fixed, all]
+act_mode="${3:-winner}" `
 
-## Select Error Function [winner, l2norm, fixed, all]
-act_mode="${3:-winner}" 
+* initial images [original (default) | blurred]
+`init_img="${4:-original}"`
 
-## initial images [original | blurred]
-init_img="${4:-original}"
-
-## target categories [original | shifted]
-target_cat="${5:-original}"
+* target categories [original (default) | shifted]
+`target_cat="${5:-original}"`
 
 
 
