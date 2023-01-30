@@ -42,26 +42,26 @@ Model architecture and 3 manipulations applied to our model to simulate specific
 
 
 
-### Parameters 
+### Manipulating Parameters 
 
 All the script calls [image_generation.sh](image_generation.sh) which handles the parameters before calling [act_max2.py](act_max2.py). 
 
 Key parameters in [image_generation.sh](image_generation.sh) are as follows. These variables can be spcified with commanline arguments. Check out [run_experiment.sh](run_validation.sh).
 
 
-#### Target Layer `act_layer="${1:-fc8}"` [fc8 (default)| conv3 | conv4 | conv5]: 
+#### Target Layer `act_layer="${1:-fc8}"` [fc8 (default)| conv3 | conv4 | conv5]
 
 Specify the target layer in DCNN to terminate the activation maximisation.
 
-#### Generation Type `gen_type="${2:-DGN}"` [DGN (default) | DCNN]: 
+#### Generation Type `gen_type="${2:-DGN}"` [DGN (default) | DCNN]
 
 Specifiy the type of activation maximisation. Both DGN and DCNN are used with the `DGN` actvation maximisation, wheras only DCNN is used with the `DCNN` actvation maximisation
 
-#### Error Function `act_mode="${3:-winner}"` [winner (default), l2norm, fixed]: 
+#### Error Function `act_mode="${3:-winner}"` [winner (default), l2norm, fixed]
 
 Specify the error function. `winner`: Winner-take-all error functin, `l2norm`: Deep-dream error functin, `fixed`: Fixed error functin. 
 
-#### Initial images `init_img="${4:-original}"` [original (default) | blurred]: 
+#### Initial images `init_img="${4:-original}"` [original (default) | blurred]
 
 Specify the input images. `blurred` is for simulating the CBS hallucinations. `original` should be used otherwise.
 
@@ -69,11 +69,11 @@ Specify the input images. `blurred` is for simulating the CBS hallucinations. `o
 
 Specify the target categories for for `fixed` Error Function. This value is ignored in `winner` or `l2norm` error functions.
 
-#### Export images `export="${6:-0}"` [0 (default) | 1]:
+#### Export images `export="${6:-0}"` [0 (default) | 1]
 
 If `export` is `1`, the program exports images to `export` folder at certain nubmer of itterations defined 'export_mode'.
 
-#### Export modes `export_mode="${7:-exp}"` [exp | validation | interview]:
+#### Export modes `export_mode="${7:-exp}"` [exp | validation | interview]
 
 Exporting the images at iteration 10, 50, 100, and 1000 in `exp` mode, 50, 100, and 100 in `validation` mode, and 5, 10, 50, 100, 200, 400, 600, 800, and 1000 in `interview` mode.
 
@@ -81,24 +81,28 @@ Exporting the images at iteration 10, 50, 100, and 1000 in `exp` mode, 50, 100, 
 ### Simulations
 We provide here six different simulations provided in the paper. 
 
-#### [1_veridical_perception.sh](1_veridical_perception.sh): 
+#### [1_veridical_perception.sh](1_veridical_perception.sh)
 
-Simulating benchmark (non-hallucinatory) perceptual phenomenology using `act_layer=fc8` `gen_type=fc8` `act_mode=winner`
-
-This script synthesizes images for 5 examples in `output` directory 
+Simulating benchmark (non-hallucinatory) perceptual phenomenology using `act_layer=fc8` `gen_type=fc8` `act_mode=fixed`. see Sec.3.1 in [our paper](PsyArXiv). 
 
 * Running `./1_veridical_perception.sh` produces this result:
 
 <p align="center">
-    <img src="examples/output/1_veridical.jpg" width=500px>
+    <img src="examples/output/1_veridical.jpg" width=700px>
 </p>
 
-[2_complex_neurological.sh](2_complex_neurological.sh): Optimizing codes to activate *output* neurons of a different network, here [AlexNet DNN](http://places.csail.mit.edu/) trained on [MIT Places205](http://places.csail.mit.edu/) dataset. The same prior used here produces the best images for AlexNet architecture trained on different datasets. It also works on other architectures but the image quality might degrade (see Sec. 3.3 in [our paper](http://arxiv.org/abs/1605.09304)). 
-* Running `./2_activate_output_placesCNN.sh` produces this result:
+#### [2_complex_neurological.sh](2_complex_neurological.sh)
+
+
+Simulating phenomenology of complex neurological visual hallucinations using `act_layer=fc8` `gen_type=fc8` `act_mode=fixed`. see Sec.3.3 in [our paper](PsyArXiv).
+
+
+* Running `./2_complex_neurological.sh` produces this result:
 
 <p align="center">
-    <img src="examples/2_complex_neuro.jpg" width=500px>
+    <img src="examples/output/2_complex_neuro.jpg" width=700px>
 </p>
+
 
 [3_complex_CBS.sh](3_complex_CBS.sh): Instead of starting from a random code, this example starts from a code of a real image (here, an image of a red bell pepper) and optimizes it to increase the activation of the "bell pepper" neuron. 
 * Depending on the hyperparameter settings, one could produce images near or far the initialization code (e.g. ending up with a *green* pepper when starting with a red pepper).
@@ -106,7 +110,7 @@ This script synthesizes images for 5 examples in `output` directory
 * Running `./3_start_from_real_image.sh` produces this result:
 
 <p align="center">
-    <img src="examples/3_complex_CBS.jpg" width=500px>
+    <img src="examples/output/3_complex_CBS.jpg" width=700px>
 </p>
 <p align="center"><i>Optimization adds more green leaves and a surface below the initial pepper</i></p>
 
@@ -115,8 +119,8 @@ This script synthesizes images for 5 examples in `output` directory
 * Running `./4_activate_hidden.sh` produces this result:
 
 <p align="center">
-    <img src="examples/4_simple_CBS_conv3.jpg" width=350px>
-    <img src="examples/4_simple_CBS_conv4.jpg" width=350px>
+    <img src="examples/output/4_simple_CBS_conv3.jpg" width=700px>
+    <img src="examples/output/4_simple_CBS_conv4.jpg" width=700px>
 </p>
 <p align="center"><i>From left to right are units that are semantically labeled by humans in [2] as: <br/>lighthouse, building, bookcase, food, and painting </i></p>
 
@@ -126,7 +130,7 @@ This script synthesizes images for 5 examples in `output` directory
 * Running `./5_activate_output_GoogLeNet.sh` produces this result:
 
 <p align="center">
-    <img src="examples/5_complex_psychedelic.jpg" width=500px>
+    <img src="examples/output/5_complex_psychedelic.jpg" width=500px>
 </p>
 
 
@@ -134,8 +138,8 @@ This script synthesizes images for 5 examples in `output` directory
 
 
 <p align="center">    
-    <img src="examples/6_simple_psychedelic_conv3.jpg" width=350px>
-    <img src="examples/6_simple_psychedelic_conv4.jpg" width=350px>
+    <img src="examples/output/6_simple_psychedelic_conv3.jpg" width=350px>
+    <img src="examples/output/6_simple_psychedelic_conv4.jpg" width=350px>
 </p>
 
 
