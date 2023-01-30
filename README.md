@@ -78,14 +78,18 @@ If `export` is `1`, the program exports images to `export` folder at certain nub
 Exporting the images at iteration 10, 50, 100, and 1000 in `exp` mode, 50, 100, and 100 in `validation` mode, and 5, 10, 50, 100, 200, 400, 600, 800, and 1000 in `interview` mode.
 
 
+* The `debug` option in the script is enabled allowing one to visualize the activations of intermediate images in 'Debug' directory.
+
+* The `stats` option in the script is enabled allowing one to expoert categories information in 'stats' directory.
+
+
 ### Simulations
 We provide here six different simulations provided in the paper. 
-
-* The input images used in the following simulations (except for complex and simple CBS).
 
 <p align="center">
     <img src="examples/init_original.jpg" width=700px>
 </p>
+<p align="center"><i>The input images used in the following simulations (except for complex and simple CBS).</i></p>
 
 
 #### [1_veridical_perception.sh](1_veridical_perception.sh)
@@ -99,7 +103,6 @@ Simulating benchmark (non-hallucinatory) perceptual phenomenology using `act_lay
     <img src="examples/output/1_veridical.jpg" width=700px>
 </p>
 
-* The `debug` option in the script is enabled allowing one to visualize the activations of intermediate images.
 
 
 #### [2_complex_neurological.sh](2_complex_neurological.sh)
@@ -120,11 +123,12 @@ Simulating phenomenology of complex neurological visual hallucinations using `ac
 
 Simulating complex visual hallucinations as the result of visuall loss in Charls Bonnet Syndrome (CBS) using `act_layer=fc8` `gen_type=DGN` `act_mode=fixed` `init_img=blurred`. The input images with blurs in their centres are used to simulte visual deficits associated with CBS. see Sec.3.3 in [our paper](PsyArXiv).
 
-* The input images used for the CBS simulations.
+* Specifing blurred input `init_img=blurred` makes the input image blurred.
 
 <p align="center">
     <img src="examples/init_blur.jpg" width=700px>
 </p> 
+<p align="center"><i>The input images used for the CBS simulations</i></p>
 
 
 * Running `./3_complex_CBS.sh` produces this result:
