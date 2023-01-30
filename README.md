@@ -36,6 +36,11 @@ In our model, three different parameters can be modified to simulate different t
 <p align="center">
     <img src="examples/model.jpg" width=600px>
 </p>
+<p align="center">
+Model architecture and three manipulations that we apply to our model to simulate specific hallucinatory phenomenology
+</p>
+
+
 
 ### Examples
 We provide here four different examples as a starting point. Feel free to be creative and fork away to produce even cooler results!
