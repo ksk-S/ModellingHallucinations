@@ -19,7 +19,7 @@ This code is built on top of Caffe. You'll need to install the following:
 
 ### Downloading models
 You will need to download a few models. There are `download.sh` scripts provided for your convenience.
-* The deep generator network (Upconvolutional network) from Dosovitskiy & Brox (2016)[3]. You can download directly on their [website](https://github.com/anguyen8/upconv_release) or using the provided script `cd nets/upconv && ./download.sh`
+* The deep generator network (Upconvolutional network) from [Dosovitskiy & Brox (2016)](https://arxiv.org/abs/1602.02644)[3]. You can download directly on their [website](https://github.com/anguyen8/upconv_release) or using the provided script `cd nets/upconv && ./download.sh`
 * The deep convolutional neural network can be downloaded from [BVLC reference CaffeNet](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) or using the provided script `cd nets/caffenet && ./download.sh`
 
 
@@ -29,6 +29,7 @@ Settings:
 
 ## Usage
 The main algorithm is in [act_max2.py](act_max2.py), which is a standalone Python script; you can pass various command-line arguments to run different experiments. 
+
 
 In our model, three different parameters can be modified to simulate different types of visual hallucinations.  
 
@@ -94,8 +95,11 @@ All the script calls [image_generation.sh](image_generation.sh) which defines al
 </p>
 
 
+### Experiments
+
 [run_experiment.sh](run_validation.sh): Run all the above and generate image in Result folder.
 
+### Validations
 
 [run_validation.sh](run_validation.sh): Run all the conditions with 32 different initial images, which were used for psychedelic survey (see the paper[1] for details).
 
