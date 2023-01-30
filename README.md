@@ -37,15 +37,33 @@ In our model, three different parameters can be modified to simulate different t
     <img src="examples/model.jpg">
 </p>
 <p align="center">
-Model architecture and three manipulations that we apply to our model to simulate specific hallucinatory phenomenology
+Model architecture and 3 manipulations applied to our model to simulate specific hallucinatory phenomenology
 </p>
 
 
 
-### Examples
-We provide here four different examples as a starting point. Feel free to be creative and fork away to produce even cooler results!
+### Simulations
+We provide here six different simulations provided in the paper. 
 
-All the script calls [image_generation.sh](image_generation.sh) which defines all the parameters and call [act_max2.py](act_max2.py).
+All the script calls [image_generation.sh](image_generation.sh) which handles the parameters before calling [act_max2.py](act_max2.py).
+
+
+
+## Target Layer [fc8 | conv3 | conv4 | conv5]
+act_layer="${1:-fc8}"
+
+## Generation Type [DGN | DCNN]
+gen_type="${2:-DGN}"
+
+## Select Error Function [winner, l2norm, fixed, all]
+act_mode="${3:-winner}" 
+
+## initial images [original | blurred]
+init_img="${4:-original}"
+
+## target categories [original | shifted]
+target_cat="${5:-original}"
+
 
 
 [1_veridical_perception.sh](1_veridical_perception.sh): Optimizing codes to activate *output* neurons of the [CaffeNet DNN](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) trained on ImageNet dataset. This script synthesizes images for 5 example neurons. 
@@ -95,8 +113,9 @@ All the script calls [image_generation.sh](image_generation.sh) which defines al
 [6_simple_psychedelic.sh](6_simple_psychedelic.sh): Here we simualte the simple psychedelic VHs with the following parameters.
 
 
-<p align="center">
-    <img src="examples/5_complex_psychedelic.jpg" width=500px>
+<p align="center">    
+    <img src="examples/6_simple_psychedelic_conv3" width=350px>
+    <img src="examples/6_simple_psychedelic_conv4" width=350px>
 </p>
 
 
