@@ -42,11 +42,11 @@ Model architecture and 3 manipulations applied to our model to simulate specific
 
 
 
-### image_generation.sh
+### Parameters 
 
 All the script calls [image_generation.sh](image_generation.sh) which handles the parameters before calling [act_max2.py](act_max2.py). 
 
-Key parameters in [image_generation.sh](image_generation.sh) are as follows.
+Key parameters in [image_generation.sh](image_generation.sh) are as follows. These variables can be spcified with commanline arguments. Check out [run_experiment.sh](run_validation.sh).
 
 
 #### Target Layer `act_layer="${1:-fc8}"` [fc8 (default)| conv3 | conv4 | conv5]: 
@@ -71,11 +71,11 @@ Specify the target categories for for `fixed` Error Function. This value is igno
 
 #### Export images `export="${6:-0}"` [0 (default) | 1]:
 
-If `export` is `1`, the program exports images to 'export' folder at certain nubmer of itterations defined 'export_mode'.
+If `export` is `1`, the program exports images to `export` folder at certain nubmer of itterations defined 'export_mode'.
 
 #### Export modes `export_mode="${7:-exp}"` [exp | validation | interview]:
 
-Exporting the images at iteration 10, 50, 100, and 1000 in 'exp' mode, 50, 100, and 100 in 'validation' mode, and 5, 10, 50, 100, 200, 400, 600, 800, and 1000 in 'interview' mode.
+Exporting the images at iteration 10, 50, 100, and 1000 in `exp` mode, 50, 100, and 100 in `validation` mode, and 5, 10, 50, 100, 200, 400, 600, 800, and 1000 in `interview` mode.
 
 
 ### Simulations
