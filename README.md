@@ -138,10 +138,6 @@ Simulating complex visual hallucinations as the result of visuall loss in Charls
 </p>
 
 
-<p align="center"><i>Optimization adds more green leaves and a surface below the initial pepper</i></p>
-
-
-
 #### [4_simple_CBS.sh](4_simple_CBS.sh)
 
 Simulating simple visual hallucinations as the result of visuall loss in Charls Bonnet Syndrome (CBS) using `act_layer=conv3` or `act_layer=conv4` `gen_type=DGN` `act_mode=fixed` `init_img=blurred`. The input images with blurs in their centres are used to simulte visual deficits associated with CBS. see Sec.3.3 in [our paper](PsyArXiv).
@@ -171,7 +167,7 @@ Simulating complex psychedelic visual hallucinations using `act_layer=fc8` `gen_
 
 #### [6_simple_psychedelic.sh](6_simple_psychedelic.sh)
 
-Simulating simple psychedelic visual hallucinations using `act_layer=conv3` or `act_layer=conv4` `gen_type=DCNN` `act_mode=l2norm` `init_img=blurred`. The input images with blurs in their centres are used to simulte visual deficits associated with CBS. see Sec.3.3 in [our paper](PsyArXiv).
+Simulating simple psychedelic visual hallucinations using `act_layer=conv3` or `act_layer=conv4` `gen_type=DCNN` `act_mode=l2norm`. See Sec.3.4 in [our paper](PsyArXiv).
 
 * Running `./6_simple_psychedelic.sh conv3` produces this result:
 <p align="center">
@@ -186,14 +182,16 @@ Simulating simple psychedelic visual hallucinations using `act_layer=conv3` or `
 
 ### Experiments
 
-#### [run_experiment.sh](run_validation.sh): Run all the above and generate the images in `Result` folder.
+#### [run_experiment.sh](run_validation.sh)
 
-An example for verdical perception with the time course.
+Run all the above and generate the images in `Result` folder.
+
+An example for verdical perception with different points of iterations.
 <p align="center">
     <img src="examples/Results/all_1_veridical.jpg" width=700px>
 </p>
 
-An example for complex psychedelic visual hallucinations with the time course.
+An example for complex psychedelic visual hallucinations with different points of iterations.
 <p align="center">
     <img src="examples/Results/all_5_complex_psychedelic.jpg" width=700px>
 </p>
@@ -201,7 +199,7 @@ An example for complex psychedelic visual hallucinations with the time course.
 
 ### Validations
 
-[run_validation.sh](run_validation.sh): Run all the conditions with 32 different initial images, which were used for psychedelic survey (see the paper[1] for details).
+[run_validation.sh](run_validation.sh): Run all the conditions with 32 different initial images, which were used for psychedelic survey. The generated images are also found in [the OSF storage](https://osf.io/nr4ke/files/osfstorage).
 
 
 
