@@ -147,7 +147,7 @@ Here is an example of activating the output neurons of a different architecture,
 * Running `./5_complex_psychedelic.sh` produces this result:
 
 <p align="center">
-    <img src="examples/output/5_complex_psychedelic.jpg" width=500px>
+    <img src="examples/output/5_complex_psychedelic.jpg" width=700px>
 </p>
 
 
