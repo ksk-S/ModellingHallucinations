@@ -142,10 +142,9 @@ Simulating simple visual hallucinations as the result of visuall loss in Charls 
 
 #### [5_complex_psychedelic.sh](5_complex_psychedelic.sh)
 
-Here is an example of activating the output neurons of a different architecture, 
+Simulating complex psychedelic visual hallucinations using `act_layer=fc8` `gen_type=DCN` `act_mode=l2norm`. Using DCNN-AM and Deep-Dream error function, the model is simulating the orginal deep-dream algorithm [1]. see Sec.3.4 in [our paper](PsyArXiv).
 
 * Running `./5_complex_psychedelic.sh` produces this result:
-
 <p align="center">
     <img src="examples/output/5_complex_psychedelic.jpg" width=700px>
 </p>
@@ -153,16 +152,16 @@ Here is an example of activating the output neurons of a different architecture,
 
 #### [6_simple_psychedelic.sh](6_simple_psychedelic.sh)
 
-Here we simualte the simple psychedelic VHs with the following parameters.
+Simulating simple psychedelic visual hallucinations using `act_layer=conv3` or `act_layer=conv4` `gen_type=DCNN` `act_mode=l2norm` `init_img=blurred`. The input images with blurs in their centres are used to simulte visual deficits associated with CBS. see Sec.3.3 in [our paper](PsyArXiv).
 
 * Running `./6_simple_psychedelic.sh conv3` produces this result:
 <p align="center">
-    <img src="examples/output/6_simple_psychedelic_conv3.jpg" width=350px>
+    <img src="examples/output/6_simple_psychedelic_conv3.jpg" width=700px>
 </p>
 
 * Running `./6_simple_psychedelic.sh conv4` produces this result:
 <p align="center">
-    <img src="examples/output/6_simple_psychedelic_conv4.jpg" width=350px>
+    <img src="examples/output/6_simple_psychedelic_conv4.jpg" width=700px>
 </p>
 
 
