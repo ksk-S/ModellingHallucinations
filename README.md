@@ -81,9 +81,11 @@ Exporting the images at iteration 10, 50, 100, and 1000 in `exp` mode, 50, 100, 
 ### Simulations
 We provide here six different simulations provided in the paper. 
 
-[1_veridical_perception.sh](1_veridical_perception.sh): 
+#### [1_veridical_perception.sh](1_veridical_perception.sh): 
 
-Optimizing codes to activate *output* neurons of the [CaffeNet DNN](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) trained on ImageNet dataset. This script synthesizes images for 5 example neurons. 
+Simulating benchmark (non-hallucinatory) perceptual phenomenology using `act_layer=fc8` `gen_type=fc8` `act_mode=winner`
+
+This script synthesizes images for 5 examples in `output` directory 
 
 * Running `./1_veridical_perception.sh` produces this result:
 
@@ -139,7 +141,14 @@ Optimizing codes to activate *output* neurons of the [CaffeNet DNN](https://gith
 
 ### Experiments
 
-[run_experiment.sh](run_validation.sh): Run all the above and generate image in Result folder.
+#### [run_experiment.sh](run_validation.sh): Run all the above and generate the images in `Result` folder.
+
+An example for verdical perception with the time course.
+<p align="center">
+    <img src="examples/1_veridical.jpg" width=500px>
+</p>
+
+
 
 ### Validations
 
