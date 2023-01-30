@@ -94,7 +94,7 @@ Simulating benchmark (non-hallucinatory) perceptual phenomenology using `act_lay
 #### [2_complex_neurological.sh](2_complex_neurological.sh)
 
 
-Simulating phenomenology of complex neurological visual hallucinations using `act_layer=fc8` `gen_type=fc8` `act_mode=fixed`. see Sec.3.3 in [our paper](PsyArXiv).
+Simulating phenomenology of complex neurological visual hallucinations using `act_layer=fc8` `gen_type=fc8` `act_mode=fixed`. see Sec.3.2 in [our paper](PsyArXiv).
 
 
 * Running `./2_complex_neurological.sh` produces this result:
