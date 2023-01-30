@@ -50,25 +50,41 @@ All the script calls [image_generation.sh](image_generation.sh) which handles th
 Key parameters in [image_generation.sh](image_generation.sh) are as follows.
 
 
-* Target Layer `act_layer="${1:-fc8}"` [fc8 (default)| conv3 | conv4 | conv5]: Specify the target layer in DCNN to terminate the activation maximisation.
+* Target Layer `act_layer="${1:-fc8}"` [fc8 (default)| conv3 | conv4 | conv5]: 
+
+Specify the target layer in DCNN to terminate the activation maximisation.
+
+* Generation Type `gen_type="${2:-DGN}"` [DGN (default) | DCNN]: 
+
+Specifiy whether using DGN-AM or DCNN-AM
+
+* Select Error Function act_mode="${3:-winner}"` [winner, l2norm, fixed]: 
+
+Specify the error function. 
+
+* initial images `init_img="${4:-original}"` [original (default) | blurred]: 
+
+Specify the input images. `blurred` is used for simulating the CBS hallucinations.
+
+* target categories `target_cat="${5:-original}"` [original (default) | shifted]: 
+
+Specify the target categories for for `fixed` Error Function. This value is ignored in  
+
+Export images 'export="${6:-0}"' [0 (default) | 1]:
+
+If export=1, the program exports images to 'export' folder at certain nubmer of itterations defined 'export_mode'.
+
+Export modes 'export_mode="${7:-exp}"' [exp | validation | interview]:
+
+Exporting the images at iteration 10, 50, 100, and 1000 in 'exp' mode, 50, 100, and 100 in 'validation' mode, and 5, 10, 50, 100, 200, 400, 600, 800, and 1000 in 'interview' mode.
 
 
-* Generation Type `gen_type="${2:-DGN}"` [DGN (default) | DCNN]: specifiy whether using DGN-AM or DCNN-AM 
 
+[1_veridical_perception.sh](1_veridical_perception.sh): 
 
-* Select Error Function act_mode="${3:-winner}"` [winner, l2norm, fixed]: Specify the error function. 
+Optimizing codes to activate *output* neurons of the [CaffeNet DNN](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) trained on ImageNet dataset. This script synthesizes images for 5 example neurons. 
 
-
-* initial images [original (default) | blurred]
-`init_img="${4:-original}"`
-
-* target categories [original (default) | shifted]
-`target_cat="${5:-original}"`
-
-
-
-[1_veridical_perception.sh](1_veridical_perception.sh): Optimizing codes to activate *output* neurons of the [CaffeNet DNN](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) trained on ImageNet dataset. This script synthesizes images for 5 example neurons. 
-* Running `./1_activate_output.sh` produces this result:
+* Running `./1_veridical_perception.sh` produces this result:
 
 <p align="center">
     <img src="examples/1_veridical.jpg" width=500px>
