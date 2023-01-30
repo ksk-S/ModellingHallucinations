@@ -64,15 +64,15 @@ Specify the error function. `winner`: Winner-take-all error functin, `l2norm`: D
 
 #### initial images `init_img="${4:-original}"` [original (default) | blurred]: 
 
-Specify the input images. `blurred` is used for simulating the CBS hallucinations.
+Specify the input images. `blurred` is for simulating the CBS hallucinations. `original` should be used otherwise.
 
 #### target categories `target_cat="${5:-original}"` [original (default) | shifted]: 
 
-Specify the target categories for for `fixed` Error Function. This value is ignored in  
+Specify the target categories for for `fixed` Error Function. This value is ignored in `winner` or `l2norm` error functions.
 
 #### Export images `export="${6:-0}"` [0 (default) | 1]:
 
-If export=1, the program exports images to 'export' folder at certain nubmer of itterations defined 'export_mode'.
+If `export` is `1`, the program exports images to 'export' folder at certain nubmer of itterations defined 'export_mode'.
 
 #### Export modes `export_mode="${7:-exp}"` [exp | validation | interview]:
 
