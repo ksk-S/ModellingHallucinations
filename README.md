@@ -42,8 +42,7 @@ Model architecture and 3 manipulations applied to our model to simulate specific
 
 
 
-### Simulations
-We provide here six different simulations provided in the paper. 
+### image_generation.sh
 
 All the script calls [image_generation.sh](image_generation.sh) which handles the parameters before calling [act_max2.py](act_max2.py). 
 
@@ -58,15 +57,15 @@ Specify the target layer in DCNN to terminate the activation maximisation.
 
 Specifiy the type of activation maximisation. Both DGN and DCNN are used with the `DGN` actvation maximisation, wheras only DCNN is used with the `DCNN` actvation maximisation
 
-#### Select Error Function `act_mode="${3:-winner}"` [winner (default), l2norm, fixed]: 
+#### Error Function `act_mode="${3:-winner}"` [winner (default), l2norm, fixed]: 
 
 Specify the error function. `winner`: Winner-take-all error functin, `l2norm`: Deep-dream error functin, `fixed`: Fixed error functin. 
 
-#### initial images `init_img="${4:-original}"` [original (default) | blurred]: 
+#### Initial images `init_img="${4:-original}"` [original (default) | blurred]: 
 
 Specify the input images. `blurred` is for simulating the CBS hallucinations. `original` should be used otherwise.
 
-#### target categories `target_cat="${5:-original}"` [original (default) | shifted]: 
+#### Target categories `target_cat="${5:-original}"` [original (default) | shifted]: 
 
 Specify the target categories for for `fixed` Error Function. This value is ignored in `winner` or `l2norm` error functions.
 
@@ -79,6 +78,8 @@ If `export` is `1`, the program exports images to 'export' folder at certain nub
 Exporting the images at iteration 10, 50, 100, and 1000 in 'exp' mode, 50, 100, and 100 in 'validation' mode, and 5, 10, 50, 100, 200, 400, 600, 800, and 1000 in 'interview' mode.
 
 
+### Simulations
+We provide here six different simulations provided in the paper. 
 
 [1_veridical_perception.sh](1_veridical_perception.sh): 
 
@@ -149,7 +150,6 @@ Optimizing codes to activate *output* neurons of the [CaffeNet DNN](https://gith
 ## Licenses
 Note that the code in this repository is licensed under MIT License, but, the pre-trained models used by the code have their own licenses. Please carefully check them before use.
 * The [image generator networks](https://arxiv.org/abs/1602.02644) (in [nets/upconv/](nets/upconv)) are for non-commercial use only. See their [page](http://lmb.informatik.uni-freiburg.de/resources/software.php) for more.
-* See the licenses of the models that you visualize (e.g. [DeepScene CNN](https://people.csail.mit.edu/khosla/papers/iclr2015_zhou.pdf)) before use.
 
 ## References
 
