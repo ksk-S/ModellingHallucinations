@@ -83,7 +83,7 @@ We provide here six different simulations provided in the paper.
 
 #### [1_veridical_perception.sh](1_veridical_perception.sh)
 
-Simulating benchmark (non-hallucinatory) perceptual phenomenology using `act_layer=fc8` `gen_type=fc8` `act_mode=fixed`. see Sec.3.1 in [our paper](PsyArXiv). 
+Simulating benchmark (non-hallucinatory) perceptual phenomenology using `act_layer=fc8` `gen_type=DGN` `act_mode=winner`. Using 'Winner-take-all' error function, the images with the categories in the input images are synthesised. See Sec.3.1 in [our paper](PsyArXiv) for more details. 
 
 * Running `./1_veridical_perception.sh` produces this result:
 
@@ -91,10 +91,13 @@ Simulating benchmark (non-hallucinatory) perceptual phenomenology using `act_lay
     <img src="examples/output/1_veridical.jpg" width=700px>
 </p>
 
+* The `debug` option in the script is enabled allowing one to visualize the activations of intermediate images.
+
+
 #### [2_complex_neurological.sh](2_complex_neurological.sh)
 
 
-Simulating phenomenology of complex neurological visual hallucinations using `act_layer=fc8` `gen_type=fc8` `act_mode=fixed`. see Sec.3.2 in [our paper](PsyArXiv).
+Simulating phenomenology of complex neurological visual hallucinations using `act_layer=fc8` `gen_type=DGN` `act_mode=fixed`. Using `fixed` error function, the image with different categories from the input images are synthesised. See Sec.3.2 in [our paper](PsyArXiv) for more details. 
 
 
 * Running `./2_complex_neurological.sh` produces this result:
@@ -104,15 +107,19 @@ Simulating phenomenology of complex neurological visual hallucinations using `ac
 </p>
 
 
-[3_complex_CBS.sh](3_complex_CBS.sh): Instead of starting from a random code, this example starts from a code of a real image (here, an image of a red bell pepper) and optimizes it to increase the activation of the "bell pepper" neuron. 
-* Depending on the hyperparameter settings, one could produce images near or far the initialization code (e.g. ending up with a *green* pepper when starting with a red pepper).
-* The `debug` option in the script is enabled allowing one to visualize the activations of intermediate images.
-* Running `./3_start_from_real_image.sh` produces this result:
+#### [3_complex_CBS.sh](3_complex_CBS.sh)
+
+
+Simulating visual hallucinations as the result of visuall loss in Charls Bonnet Syndrome (CBS) using `act_layer=fc8` `gen_type=DGN` `act_mode=fixed` `init_img=blurred`. The input images with blurs in their centres are used to simulte visual deficits associated with CBS. see Sec.3.3 in [our paper](PsyArXiv).
+
+* Running `./3_complex_CBS.sh` produces this result:
 
 <p align="center">
     <img src="examples/output/3_complex_CBS.jpg" width=700px>
 </p>
 <p align="center"><i>Optimization adds more green leaves and a surface below the initial pepper</i></p>
+
+
 
 
 [4_simple_CBS.sh](4_simple_CBS.sh): Optimizing codes to activate *hidden* neurons at layer 5 of the [DeepScene DNN](https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) trained on MIT Places dataset. This script synthesizes images for 5 example neurons. 
