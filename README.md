@@ -56,11 +56,11 @@ Specify the target layer in DCNN to terminate the activation maximisation.
 
 #### Generation Type `gen_type="${2:-DGN}"` [DGN (default) | DCNN]: 
 
-Specifiy whether using DGN-AM or DCNN-AM
+Specifiy the type of activation maximisation. Both DGN and DCNN are used with the `DGN` actvation maximisation, wheras only DCNN is used with the `DCNN` actvation maximisation
 
-#### Select Error Function act_mode="${3:-winner}"` [winner, l2norm, fixed]: 
+#### Select Error Function `act_mode="${3:-winner}"` [winner (default), l2norm, fixed]: 
 
-Specify the error function. 
+Specify the error function. `winner`: Winner-take-all error functin, `l2norm`: Deep-dream error functin, `fixed`: Fixed error functin. 
 
 #### initial images `init_img="${4:-original}"` [original (default) | blurred]: 
 
@@ -70,11 +70,11 @@ Specify the input images. `blurred` is used for simulating the CBS hallucination
 
 Specify the target categories for for `fixed` Error Function. This value is ignored in  
 
-#### Export images 'export="${6:-0}"' [0 (default) | 1]:
+#### Export images `export="${6:-0}"` [0 (default) | 1]:
 
 If export=1, the program exports images to 'export' folder at certain nubmer of itterations defined 'export_mode'.
 
-#### Export modes 'export_mode="${7:-exp}"' [exp | validation | interview]:
+#### Export modes `export_mode="${7:-exp}"` [exp | validation | interview]:
 
 Exporting the images at iteration 10, 50, 100, and 1000 in 'exp' mode, 50, 100, and 100 in 'validation' mode, and 5, 10, 50, 100, 200, 400, 600, 800, and 1000 in 'interview' mode.
 
