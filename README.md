@@ -36,7 +36,7 @@ In our model, three different parameters can be modified to simulate different t
 <p align="center">
     <img src="examples/model.jpg" width=600px>
 </p>
-<p align="center">
+<p align="center"  width=600px>
 Model architecture and three manipulations that we apply to our model to simulate specific hallucinatory phenomenology
 </p>
 

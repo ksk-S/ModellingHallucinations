@@ -46,7 +46,8 @@ label=6_simple_psychedelic
 options="conv3 conv4"
 for option in ${options}; do
     bash image_generation.sh ${option} DCNN winner original shifted 1
-    bash scripts/make_montage.sh ${option} original shifted       mv export ${dir}/${label}_${option}
+    bash scripts/make_montage.sh ${option} original shifted     
+    mv export ${dir}/${label}_${option}
     cp ${dir}/${label}_${option}/result1.jpg ${dir}/${label}_${option}.jpg
 done
 
