@@ -179,8 +179,8 @@ def make_step_net(net, end, unit, image, xy=0, step_size=1, act_mode="fixed", ji
       raise Exception("Invalid layer type!")    
     dst.diff[:] = one_hot  
 
-  elif act_mode == "all":
-    dst.diff[:] = 1
+#  elif act_mode == "all":
+#    dst.diff[:] = 1
 
         
   # Get back the gradient at the optimization layer

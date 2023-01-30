@@ -7,7 +7,7 @@ act_layer="${1:-fc8}"
 ## Generation Type [DGN | DCNN]
 gen_type="${2:-DGN}"
 
-## Select Error Function [winner, l2norm, fixed, all]
+## Select Error Function [winner, l2norm, fixed]
 act_mode="${3:-winner}" 
 
 ## initial images [original | blurred]
